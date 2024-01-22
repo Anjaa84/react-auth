@@ -16,6 +16,7 @@ const Signup = () => {
     setError("");
     try {
       await signUp(email, password);
+
       navigate("/");
     } catch (err) {
       setError(err.message);
@@ -26,11 +27,10 @@ const Signup = () => {
     <>
       <div className="p-4 box">
         <h2 className="mb-3">Firebase/ React Auth Signup</h2>
-        
+
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Form onSubmit={handleSubmit}>
-
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
